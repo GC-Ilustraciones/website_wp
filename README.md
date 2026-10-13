@@ -30,4 +30,4 @@ El script genera un ZIP por cada subdirectorio de `themes/` y `plugins/` en `dis
 
 ## GitHub
 
-Este repositorio está pensado para `GC-Ilustraciones/website_wp`. Antes de publicarlo, revisa `git status` para confirmar que solo hay código y documentación. La autenticación actual de GitHub CLI debe renovarse antes de crear o subir el remoto.
+Repositorio público: <https://github.com/GC-Ilustraciones/website_wp>. Antes de cada envío, revisa `git status` para confirmar que solo hay código y documentación. El remoto `origin` usa SSH; no depende de la sesión de GitHub CLI.
