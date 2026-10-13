@@ -4,17 +4,17 @@ Repositorio del tema y los plugins propios para el sitio WordPress. El contenido
 
 ## Entorno local
 
-El WordPress de desarrollo se ejecuta desde `/Users/seba/dev/wksp/tools/wordpress/` con Docker Compose. Su configuración y datos están en ese directorio, separados de este repositorio.
+El WordPress de desarrollo se ejecuta desde `/Users/seba/dev/tools/wordpress/` con Docker Compose. Su configuración y datos están en ese directorio, separados de este repositorio.
 
 ```sh
-cd /Users/seba/dev/wksp/tools/wordpress
+cd /Users/seba/dev/tools/wordpress
 docker compose up -d
 ```
 
 Sitio: <http://127.0.0.1:8088/>  
 Administración: <http://127.0.0.1:8088/wp-admin/>
 
-El usuario local es `admin`. La contraseña de prueba se guarda en `/Users/seba/dev/wksp/tools/wordpress/.env`; ese archivo no se sube a GitHub. Para detener los contenedores sin borrar datos, ejecuta `docker compose down` desde el directorio del entorno.
+El usuario local es `admin`. La contraseña de prueba se guarda en `/Users/seba/dev/tools/wordpress/.env`; ese archivo no se sube a GitHub. Para detener los contenedores sin borrar datos, ejecuta `docker compose down` desde el directorio del entorno.
 
 ## Tema y plugins
 
