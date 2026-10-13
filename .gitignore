@@ -1,0 +1,10 @@
+.DS_Store
+.env
+dist/
+node_modules/
+
+# WordPress core, content and database belong to the separate local runtime.
+data/
+wp-content/uploads/
+*.sql
+*.sql.gz
