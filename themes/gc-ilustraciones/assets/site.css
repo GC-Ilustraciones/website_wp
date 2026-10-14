@@ -211,6 +211,10 @@ a:focus-visible { outline: 2px solid var(--gc-accent); outline-offset: 4px; }
 .gc-site-footer__inner a { color: inherit; text-decoration: underline; text-decoration-color: transparent; }
 .gc-site-footer__inner a:hover, .gc-site-footer__inner a:focus-visible { color: var(--gc-accent); text-decoration-color: currentColor; }
 
+.gc-page { padding-block: 65px 110px; }
+.gc-page__title { margin: 0 0 32px; font-family: "GC Josefin Sans", sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.1; letter-spacing: -.035em; }
+.gc-page__content { max-width: 760px; font-size: 1.05rem; line-height: 1.7; overflow-wrap: anywhere; }
+
 .gc-work-detail { padding-block: 65px 110px; }
 .gc-back-link { display: inline-block; margin-bottom: 30px; color: var(--gc-muted); font-size: .9rem; font-weight: 700; text-decoration: none; }
 .gc-back-link:hover { color: var(--gc-accent); }
@@ -254,6 +258,7 @@ a:focus-visible { outline: 2px solid var(--gc-accent); outline-offset: 4px; }
   .gc-hero__title { font-size: clamp(2.7rem, 10vw, 4rem); }
   .gc-gallery { grid-template-columns: 1fr; gap: 38px; }
   .gc-section { padding-block: 75px; }
+  .gc-page { padding-block: 45px 80px; }
   .gc-work-detail { padding-block: 45px 80px; }
 }
 @media (max-width: 700px) {
