@@ -37,6 +37,14 @@ El script solo se ejecuta si la URL del sitio apunta a localhost. Nunca sube esa
 
 Para añadir contenido real, entra en **Obras → Añadir obra**. Rellena título, descripción, resumen e imagen destacada y publícala. La portada y su ficha se actualizan automáticamente. Los datos y las imágenes cargadas siguen fuera de este repositorio.
 
+## Editar la portada y las obras
+
+Para cambiar los textos de la portada, entra en **Apariencia → Editor → Plantillas → Portada**. Edita los bloques de **Inicio** y **Contacto** y guarda la plantilla. Los textos introductorios de **Obras** también están en esa plantilla. La galería, en cambio, se construye automáticamente con las obras publicadas: cada tarjeta se edita desde **Obras**, no desde la plantilla.
+
+El Editor del sitio guarda los cambios de la plantilla en la **base de datos**. Esos cambios prevalecen sobre `themes/gc-ilustraciones/templates/front-page.html` y no modifican el repositorio. Para llevarlos a otra instalación, expórtalos o incorpora los cambios al archivo del tema. El banner y el logo siguen siendo recursos del tema.
+
+Para editar una ficha, entra en **Obras → Todas las obras**, abre la obra y cambia sus bloques de texto. En la barra lateral de ajustes de **Obra**, pulsa **Imagen destacada / Set featured image**, selecciona o sube una imagen y guarda. Esa imagen aparecerá en la galería y en la ficha; no tienes que insertarla en el cuerpo del editor. Si una obra de muestra todavía no tiene imagen destacada, la web muestra temporalmente una ilustración del tema. Esa muestra no es un archivo adjunto de la biblioteca de medios y por eso no aparece entre los bloques de la obra.
+
 Para crear paquetes instalables desde el panel de un proveedor WordPress:
 
 ```sh

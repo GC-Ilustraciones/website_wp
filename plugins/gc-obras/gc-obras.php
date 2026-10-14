@@ -2,7 +2,7 @@
 /**
  * Plugin Name: GC Obras
  * Description: Obras editables y galería para GC Ilustraciones.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Text Domain: gc-obras
@@ -35,6 +35,21 @@ register_activation_hook( __FILE__, function () {
 	flush_rewrite_rules();
 } );
 register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
+
+add_action( 'enqueue_block_editor_assets', function () {
+	$screen = get_current_screen();
+	if ( ! $screen || 'post' !== $screen->base || 'gc_work' !== $screen->post_type ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'gc-obras-editor-help',
+		plugins_url( 'editor-help.js', __FILE__ ),
+		array( 'wp-plugins', 'wp-editor', 'wp-element' ),
+		'0.1.1',
+		true
+	);
+} );
 
 function gc_obras_visual( $post_id ) {
 	$thumbnail = get_the_post_thumbnail(
