@@ -18,4 +18,22 @@
     },
     save: function () { return null; }
   });
+  blocks.registerBlockType('gc-obras/whatsapp-contact', {
+    title: 'WhatsApp de contacto',
+    icon: 'format-chat',
+    category: 'widgets',
+    edit: function () {
+      return createElement('p', { className: 'gc-editor-placeholder' }, 'El enlace de WhatsApp utiliza el número de Obras → Contacto.');
+    },
+    save: function () { return null; }
+  });
+  blocks.registerBlockType('gc-obras/work-contact', {
+    title: 'Contacto de la obra',
+    icon: 'email-alt',
+    category: 'widgets',
+    edit: function () {
+      return createElement('p', { className: 'gc-editor-placeholder' }, 'El botón enlaza con WhatsApp o, si no hay número, con el correo.');
+    },
+    save: function () { return null; }
+  });
 })(window.wp.blocks, window.wp.element);

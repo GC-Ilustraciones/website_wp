@@ -45,11 +45,19 @@ El Editor del sitio guarda los cambios de la plantilla en la **base de datos**. 
 
 Para editar una ficha, entra en **Obras → Todas las obras**, abre la obra y cambia sus bloques de texto. En la barra lateral de ajustes de **Obra**, pulsa **Imagen destacada / Set featured image**, selecciona o sube una imagen y guarda. Esa imagen aparecerá en la galería y en la ficha; no tienes que insertarla en el cuerpo del editor. Si una obra de muestra todavía no tiene imagen destacada, la web muestra temporalmente una ilustración del tema. Esa muestra no es un archivo adjunto de la biblioteca de medios y por eso no aparece entre los bloques de la obra.
 
+## Contacto por WhatsApp
+
+En **Obras → Contacto**, configura el número con prefijo internacional (por ejemplo, `+34 600 000 000`). WordPress lo guarda en su base de datos como dígitos, sin `+` ni espacios. El número aparece junto al correo en Contacto de la portada; cada ficha de Obra muestra un botón que prepara un mensaje con el título y el enlace de esa obra. El visitante debe enviar el mensaje desde WhatsApp; la web no lo envía automáticamente.
+
+Si el campo está vacío, la portada conserva el correo y las fichas usan **Consultar por correo**. El número no forma parte del tema, del plugin ni de Git: tras instalar los ZIP en otro proveedor, entra en **Obras → Contacto** de esa instalación y configúralo allí. La portada local usa el bloque dinámico del plugin; si has guardado una versión de la plantilla en **Apariencia → Editor**, incorpórale ese bloque o restablece la plantilla para recibir los cambios del tema.
+
 Para crear paquetes instalables desde el panel de un proveedor WordPress:
 
 ```sh
 ./scripts/build-zips.sh
 ```
+
+El icono de WhatsApp procede de Font Awesome Free (CC BY 4.0); su atribución y licencia se indican en `themes/gc-ilustraciones/assets/whatsapp.svg`.
 
 El script genera un ZIP por cada subdirectorio de `themes/` y `plugins/` en `dist/`. En un WordPress nuevo instala Twenty Twenty-Five, luego el plugin GC Obras y el tema hijo GC Ilustraciones. Después carga las obras y las imágenes del cliente. Los ZIP y los datos locales no forman parte de Git.
 
