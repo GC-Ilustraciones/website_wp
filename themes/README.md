@@ -1,3 +1,3 @@
-# Temas propios
+# Tema
 
-Cada tema tendrá su propia carpeta con el nombre de su slug de WordPress. Todavía no se ha elegido un tema base.
+`gc-ilustraciones/` es el tema hijo del proyecto. Requiere el tema oficial Twenty Twenty-Five (`twentytwentyfive`) instalado como padre. La portada y la ficha de obra se definen en `templates/`; el CSS y los recursos de marca están en `assets/`.

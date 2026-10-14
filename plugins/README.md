@@ -1,3 +1,3 @@
-# Plugins propios
+# Plugin propio
 
-Cada plugin propio tendrá su propia carpeta con el nombre de su slug de WordPress. No se incluyen plugins de terceros ni datos del sitio.
+`gc-obras/` registra el tipo de contenido **Obras** y los bloques dinámicos que muestran la galería y la imagen de cada ficha. Los datos introducidos desde WordPress permanecen en su base de datos; aquí solo se guarda el código.

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1120px"
+    },
+    "color": {
+      "palette": [
+        { "slug": "base", "name": "Blanco", "color": "#ffffff" },
+        { "slug": "contrast", "name": "Azul tinta", "color": "#1e2740" },
+        { "slug": "accent-1", "name": "Terracota", "color": "#78180e" },
+        { "slug": "accent-2", "name": "Lavanda suave", "color": "#f8f6fb" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|base",
+      "text": "var:preset|color|contrast"
+    },
+    "typography": {
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "lineHeight": "1.5"
+    }
+  }
+}
