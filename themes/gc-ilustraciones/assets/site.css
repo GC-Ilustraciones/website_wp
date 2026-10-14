@@ -208,6 +208,8 @@ a:focus-visible { outline: 2px solid var(--gc-accent); outline-offset: 4px; }
   font-size: 14px;
   line-height: 1.5;
 }
+.gc-site-footer__inner a { color: inherit; text-decoration: underline; text-decoration-color: transparent; }
+.gc-site-footer__inner a:hover, .gc-site-footer__inner a:focus-visible { color: var(--gc-accent); text-decoration-color: currentColor; }
 
 .gc-work-detail { padding-block: 65px 110px; }
 .gc-back-link { display: inline-block; margin-bottom: 30px; color: var(--gc-muted); font-size: .9rem; font-weight: 700; text-decoration: none; }

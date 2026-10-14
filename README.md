@@ -65,6 +65,14 @@ El script genera un ZIP por cada subdirectorio de `themes/` y `plugins/` en `dis
 
 Las plantillas editadas en **Apariencia → Editor** se guardan en la base de datos y pueden prevalecer sobre los archivos del tema. Si el cambio debe acompañar a futuros despliegues, incorpóralo al tema del repositorio.
 
+## Privacidad y cookies
+
+El WordPress local tiene asignada en **Ajustes → Privacidad** una página «Política de privacidad» en estado **borrador**. Es una plantilla en español: antes de publicarla, completa los campos entre corchetes con la identidad y el contacto del responsable, el proveedor de alojamiento y de correo, las finalidades y bases jurídicas, los plazos de conservación y los posibles destinatarios o transferencias. Revisa también el texto de cookies según los servicios reales del proveedor. Elimina el apartado «Antes de publicar» y no publiques el borrador con campos pendientes.
+
+Cuando esté completo, abre **Páginas → Política de privacidad**, revisa el contenido y pulsa **Publicar**. Comprueba en **Ajustes → Privacidad** que esa página está seleccionada. El pie del tema enlaza automáticamente la página publicada; mientras sea borrador, no muestra el enlace. En otro proveedor, crea una página en borrador y pega el contenido de [la plantilla](docs/politica-privacidad-borrador.html) desde el editor de código de WordPress; después completa sus datos, publícala y asígnala en **Ajustes → Privacidad**. El contenido efectivo de la página y ese ajuste viven en la base de datos, no en los ZIP.
+
+En la versión actual no se han identificado cookies opcionales en la portada ni en las fichas vistas sin iniciar sesión; el tema carga fuentes y recursos locales y no incluye analítica, píxeles publicitarios, formularios ni contenido incrustado. Por eso no se instala un banner ni un plugin de consentimiento. Al desplegar en otro alojamiento o añadir servicios, revisa de nuevo las cookies y peticiones de terceros como visitante sin sesión. Si aparecen servicios opcionales, configura un gestor de consentimiento que los bloquee antes de la elección y permita aceptar, rechazar y cambiarla después. Los enlaces de correo y WhatsApp abren servicios externos al pulsarlos; no cargan scripts de esos proveedores en la página.
+
 ## GitHub
 
 Repositorio público: <https://github.com/GC-Ilustraciones/website_wp>. Antes de cada envío, revisa `git status` para confirmar que solo hay código y documentación. El remoto `origin` usa SSH; no depende de la sesión de GitHub CLI.
