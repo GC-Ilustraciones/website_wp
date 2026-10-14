@@ -2,7 +2,7 @@
 /**
  * Plugin Name: GC Obras
  * Description: Obras editables y galería para GC Ilustraciones.
- * Version: 0.2.1
+ * Version: 0.2.2
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Text Domain: gc-obras

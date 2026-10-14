@@ -59,7 +59,7 @@ Para crear paquetes instalables desde el panel de un proveedor WordPress:
 ./scripts/build-zips.sh
 ```
 
-El icono de WhatsApp procede de Font Awesome Free (CC BY 4.0); su atribución y licencia se indican en `themes/gc-ilustraciones/assets/whatsapp.svg`.
+Los iconos de WhatsApp y correo proceden de Font Awesome Free (CC BY 4.0); su atribución y licencia se indican en `themes/gc-ilustraciones/assets/whatsapp.svg` y `themes/gc-ilustraciones/assets/envelope.svg`.
 
 El script genera un ZIP por cada subdirectorio de `themes/` y `plugins/` en `dist/`. En un WordPress nuevo instala Twenty Twenty-Five, luego el plugin GC Obras y el tema hijo GC Ilustraciones. Después carga las obras y las imágenes del cliente. Los ZIP y los datos locales no forman parte de Git.
 

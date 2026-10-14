@@ -137,7 +137,7 @@ function gc_obras_contact_settings_page() {
 function gc_obras_render_email_contact() {
 	$email = gc_obras_contact_email();
 	return $email
-		? '<a class="gc-contact__link" href="' . esc_url( 'mailto:' . $email ) . '">' . esc_html( $email ) . ' <span aria-hidden="true">↗</span></a>'
+		? '<a class="gc-contact__link" href="' . esc_url( 'mailto:' . $email ) . '"><span class="gc-email-icon" aria-hidden="true"></span><span class="gc-contact__value">' . esc_html( $email ) . '</span></a>'
 		: '';
 }
 
@@ -151,7 +151,7 @@ function gc_obras_render_whatsapp_contact() {
 	$display = '34' === substr( $number, 0, 2 ) && 11 === strlen( $number )
 		? '+34 ' . substr( $number, 2, 3 ) . ' ' . substr( $number, 5, 3 ) . ' ' . substr( $number, 8 )
 		: '+' . $number;
-	return '<a class="gc-contact__link gc-contact__link--whatsapp" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer" aria-label="' . esc_attr( 'WhatsApp: ' . $display ) . '"><span class="gc-whatsapp-icon" aria-hidden="true"></span><span>' . esc_html( $display ) . '</span></a>';
+	return '<a class="gc-contact__link gc-contact__link--whatsapp" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer" aria-label="' . esc_attr( 'WhatsApp: ' . $display ) . '"><span class="gc-whatsapp-icon" aria-hidden="true"></span><span class="gc-contact__value">' . esc_html( $display ) . '</span></a>';
 }
 
 function gc_obras_render_work_contact( $attributes, $content, $block ) {
