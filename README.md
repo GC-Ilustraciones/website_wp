@@ -45,11 +45,13 @@ El Editor del sitio guarda los cambios de la plantilla en la **base de datos**. 
 
 Para editar una ficha, entra en **Obras → Todas las obras**, abre la obra y cambia sus bloques de texto. En la barra lateral de ajustes de **Obra**, pulsa **Imagen destacada / Set featured image**, selecciona o sube una imagen y guarda. Esa imagen aparecerá en la galería y en la ficha; no tienes que insertarla en el cuerpo del editor. Si una obra de muestra todavía no tiene imagen destacada, la web muestra temporalmente una ilustración del tema. Esa muestra no es un archivo adjunto de la biblioteca de medios y por eso no aparece entre los bloques de la obra.
 
-## Contacto por WhatsApp
+## Contacto desde WordPress
 
-En **Obras → Contacto**, configura el número con prefijo internacional (por ejemplo, `+34 600 000 000`). WordPress lo guarda en su base de datos como dígitos, sin `+` ni espacios. El número aparece junto al correo en Contacto de la portada; cada ficha de Obra muestra un botón que prepara un mensaje con el título y el enlace de esa obra. El visitante debe enviar el mensaje desde WhatsApp; la web no lo envía automáticamente.
+En **Obras → Contacto**, configura el **correo electrónico** y el **número de WhatsApp** con prefijo internacional (por ejemplo, `+34 600 000 000`). Ambos valores se guardan en la base de datos de WordPress, fuera del tema, del plugin y de Git. El número se normaliza como dígitos, sin `+` ni espacios.
 
-Si el campo está vacío, la portada conserva el correo y las fichas usan **Consultar por correo**. El número no forma parte del tema, del plugin ni de Git: tras instalar los ZIP en otro proveedor, entra en **Obras → Contacto** de esa instalación y configúralo allí. La portada local usa el bloque dinámico del plugin; si has guardado una versión de la plantilla en **Apariencia → Editor**, incorpórale ese bloque o restablece la plantilla para recibir los cambios del tema.
+La portada muestra los canales que tengan un valor configurado. Cada ficha de Obra prepara un mensaje de WhatsApp con su título y enlace; si no hay número, usa **Consultar por correo** con la dirección configurada. Si los dos campos están vacíos, no aparece un botón de contacto en las fichas. El visitante debe enviar el mensaje desde su aplicación; la web no lo envía automáticamente.
+
+Tras instalar los ZIP en otro proveedor, entra en **Obras → Contacto** de esa instalación y configura allí los dos datos. La portada usa bloques dinámicos del plugin; si has guardado una versión de la plantilla en **Apariencia → Editor**, incorpora esos bloques o restablece la plantilla para recibir los cambios del tema.
 
 Para crear paquetes instalables desde el panel de un proveedor WordPress:
 

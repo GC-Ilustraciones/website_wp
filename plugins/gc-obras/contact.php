@@ -1,6 +1,6 @@
 <?php
 /**
- * WhatsApp settings and contact links for GC Obras.
+ * Contact settings and links for GC Obras.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,6 +36,28 @@ function gc_obras_sanitize_whatsapp_number( $value ) {
 	return get_option( 'gc_obras_whatsapp_number', '' );
 }
 
+function gc_obras_sanitize_contact_email( $value ) {
+	if ( is_string( $value ) && '' === trim( $value ) ) {
+		return '';
+	}
+	$email = is_string( $value ) ? trim( $value ) : '';
+	if ( is_email( $email ) ) {
+		return sanitize_email( $email );
+	}
+	add_settings_error(
+		'gc_obras_contact_email',
+		'invalid_contact_email',
+		'Introduce una dirección de correo válida.',
+		'error'
+	);
+	return get_option( 'gc_obras_contact_email', '' );
+}
+
+function gc_obras_contact_email() {
+	$email = get_option( 'gc_obras_contact_email', '' );
+	return is_string( $email ) && is_email( $email ) ? sanitize_email( $email ) : '';
+}
+
 function gc_obras_whatsapp_number() {
 	return gc_obras_normalize_whatsapp_number( get_option( 'gc_obras_whatsapp_number', '' ) );
 }
@@ -62,11 +84,16 @@ add_action( 'admin_init', function () {
 		'default'           => '',
 		'sanitize_callback' => 'gc_obras_sanitize_whatsapp_number',
 	) );
+	register_setting( 'gc_obras_contacto', 'gc_obras_contact_email', array(
+		'type'              => 'string',
+		'default'           => '',
+		'sanitize_callback' => 'gc_obras_sanitize_contact_email',
+	) );
 	add_settings_section(
-		'gc_obras_whatsapp',
-		'WhatsApp',
+		'gc_obras_contact_methods',
+		'Datos de contacto',
 		function () {
-			echo '<p>Este número se muestra en la portada y recibe las consultas sobre cada obra.</p>';
+			echo '<p>Estos datos se muestran en la portada y reciben las consultas sobre cada obra.</p>';
 		},
 		'gc-obras-contacto'
 	);
@@ -79,7 +106,17 @@ add_action( 'admin_init', function () {
 			echo '<p class="description">Incluye el prefijo internacional. Puedes dejarlo vacío para usar solo el correo.</p>';
 		},
 		'gc-obras-contacto',
-		'gc_obras_whatsapp'
+		'gc_obras_contact_methods'
+	);
+	add_settings_field(
+		'gc_obras_contact_email',
+		'Correo electrónico',
+		function () {
+			echo '<input type="email" class="regular-text" id="gc_obras_contact_email" name="gc_obras_contact_email" value="' . esc_attr( gc_obras_contact_email() ) . '" placeholder="contacto@ejemplo.com" autocomplete="email">';
+			echo '<p class="description">Puedes dejarlo vacío para ocultar el correo. Si tampoco hay WhatsApp, no se mostrará un botón de contacto en las fichas.</p>';
+		},
+		'gc-obras-contacto',
+		'gc_obras_contact_methods'
 	);
 } );
 
@@ -89,11 +126,19 @@ function gc_obras_contact_settings_page() {
 	}
 	echo '<div class="wrap"><h1>Contacto de Obras</h1>';
 	settings_errors( 'gc_obras_whatsapp_number' );
+	settings_errors( 'gc_obras_contact_email' );
 	echo '<form method="post" action="options.php">';
 	settings_fields( 'gc_obras_contacto' );
 	do_settings_sections( 'gc-obras-contacto' );
 	submit_button( 'Guardar contacto' );
 	echo '</form></div>';
+}
+
+function gc_obras_render_email_contact() {
+	$email = gc_obras_contact_email();
+	return $email
+		? '<a class="gc-contact__link" href="' . esc_url( 'mailto:' . $email ) . '">' . esc_html( $email ) . ' <span aria-hidden="true">↗</span></a>'
+		: '';
 }
 
 function gc_obras_render_whatsapp_contact() {
@@ -116,7 +161,10 @@ function gc_obras_render_work_contact( $attributes, $content, $block ) {
 	}
 	$number = gc_obras_whatsapp_number();
 	if ( ! $number ) {
-		return '<a class="gc-button" href="mailto:contacto@gcilustraciones.com">Consultar por correo <span aria-hidden="true">↗</span></a>';
+		$email = gc_obras_contact_email();
+		return $email
+			? '<a class="gc-button" href="' . esc_url( 'mailto:' . $email ) . '">Consultar por correo <span aria-hidden="true">↗</span></a>'
+			: '';
 	}
 	$title = wp_strip_all_tags( get_the_title( $post_id ) );
 	$message = sprintf( 'Hola, me interesa la obra «%s». La vi aquí: %s', $title, get_permalink( $post_id ) );

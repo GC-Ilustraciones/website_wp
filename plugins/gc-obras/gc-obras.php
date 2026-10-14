@@ -2,7 +2,7 @@
 /**
  * Plugin Name: GC Obras
  * Description: Obras editables y galería para GC Ilustraciones.
- * Version: 0.2.0
+ * Version: 0.2.1
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Text Domain: gc-obras
@@ -122,7 +122,7 @@ add_action( 'init', function () {
 		'gc-obras-blocks',
 		plugins_url( 'blocks.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-element' ),
-		'0.2.0',
+		'0.2.1',
 		true
 	);
 	register_block_type( 'gc-obras/gallery', array(
@@ -134,6 +134,11 @@ add_action( 'init', function () {
 		'api_version'     => 3,
 		'editor_script'   => 'gc-obras-blocks',
 		'render_callback' => 'gc_obras_render_visual',
+	) );
+	register_block_type( 'gc-obras/email-contact', array(
+		'api_version'     => 3,
+		'editor_script'   => 'gc-obras-blocks',
+		'render_callback' => 'gc_obras_render_email_contact',
 	) );
 	register_block_type( 'gc-obras/whatsapp-contact', array(
 		'api_version'     => 3,

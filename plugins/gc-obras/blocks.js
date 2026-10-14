@@ -18,6 +18,15 @@
     },
     save: function () { return null; }
   });
+  blocks.registerBlockType('gc-obras/email-contact', {
+    title: 'Correo de contacto',
+    icon: 'email-alt',
+    category: 'widgets',
+    edit: function () {
+      return createElement('p', { className: 'gc-editor-placeholder' }, 'El enlace de correo utiliza la dirección de Obras → Contacto.');
+    },
+    save: function () { return null; }
+  });
   blocks.registerBlockType('gc-obras/whatsapp-contact', {
     title: 'WhatsApp de contacto',
     icon: 'format-chat',
@@ -32,7 +41,7 @@
     icon: 'email-alt',
     category: 'widgets',
     edit: function () {
-      return createElement('p', { className: 'gc-editor-placeholder' }, 'El botón enlaza con WhatsApp o, si no hay número, con el correo.');
+      return createElement('p', { className: 'gc-editor-placeholder' }, 'El botón enlaza con WhatsApp o, si no hay número, con el correo configurado.');
     },
     save: function () { return null; }
   });
