@@ -163,10 +163,10 @@ function gc_obras_render_work_contact( $attributes, $content, $block ) {
 	if ( ! $number ) {
 		$email = gc_obras_contact_email();
 		return $email
-			? '<a class="gc-button" href="' . esc_url( 'mailto:' . $email ) . '">Consultar por correo <span aria-hidden="true">↗</span></a>'
+			? '<a class="gc-work-inquiry" href="' . esc_url( 'mailto:' . $email ) . '"><span class="gc-work-inquiry__text">Consultar por correo</span><span class="gc-email-icon gc-work-inquiry__icon" aria-hidden="true"></span></a>'
 			: '';
 	}
 	$title = wp_strip_all_tags( get_the_title( $post_id ) );
 	$message = sprintf( 'Hola, me interesa la obra «%s». La vi aquí: %s', $title, get_permalink( $post_id ) );
-	return '<a class="gc-button gc-button--whatsapp" href="' . esc_url( gc_obras_whatsapp_url( $message ) ) . '" target="_blank" rel="noopener noreferrer"><span class="gc-whatsapp-icon" aria-hidden="true"></span>Consultar por WhatsApp</a>';
+	return '<a class="gc-work-inquiry" href="' . esc_url( gc_obras_whatsapp_url( $message ) ) . '" target="_blank" rel="noopener noreferrer"><span class="gc-work-inquiry__text">Consultar por WhatsApp</span><span class="gc-whatsapp-icon gc-work-inquiry__icon gc-work-inquiry__icon--whatsapp" aria-hidden="true"></span></a>';
 }

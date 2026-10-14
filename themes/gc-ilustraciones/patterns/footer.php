@@ -6,5 +6,5 @@
  */
 ?>
 <!-- wp:html -->
-<footer class="gc-site-footer"><div class="gc-shell">© <?php echo esc_html( gmdate( 'Y' ) ); ?> GC Ilustraciones · Valencia, España</div></footer>
+<footer class="gc-site-footer"><div class="gc-shell gc-site-footer__inner">© <?php echo esc_html( gmdate( 'Y' ) ); ?> GC Ilustraciones · Valencia, España</div></footer>
 <!-- /wp:html -->
